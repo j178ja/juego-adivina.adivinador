@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADIVINANZA</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="C:\Users\Usuario\OneDrive\Escritorio\PROYECTOS\JUEGOS\ADIVINANZA\styles\adivinanza.css" type="text/css">
+  <div id="centrar-h1">
+    <h1>ADIVINA ADIVINADOR</h1>
+  </div>
+</head>
+<body>
+  <fieldset>
+    <legend >&#127922;  A JUGAR !  &#127922;</legend>
+  <fieldset class="contenedor">
+    <legend id="legend-contenedor" onclick="iniciarJuego()">Para empezar a jugar presiona<br>
+        AQUI !</legend>
+    <img id="miImagen" src="C:\Users\Usuario\OneDrive\Escritorio\PROYECTOS\JUEGOS\ADIVINANZA\styles\imagenes\parque.png" type="image/jpg"/>
+    <div id="area-juego">
+    <div class="nombre-jugador" id="respuesta1-container" ></div>  <!--no deberia ser clase sino id pero no se como asociar
+                  la respuesta 1 para que se incorpore en el lugar de nombre jugador-->
+    <label>debes elegir numeros entre</label>
+ <div id="parametrosAjugar">
+    <label class="numeros" id="respuesta3-container"></label>
+    <label id="y" >Y</label>
+    <label class="numeros" id="respuesta4-container"></label>
+</div>
+  <div class="cantidadIntentos" id="respuesta2-container"></div>
+    <label>Cantidad intentos</label>
+  <div id="numeros-elegidos"></div> 
+    <label>numeros elegidos</label>
+  <div id="contenedorIntentos">
+    <div id="intRealizados">
+  <div id="intentos-realizados"></div>
+    <label>intentos realizados</label>
+   </div>
+ <div id="intDisponibles">
+   <div id="intentosDisponibles"></div>
+   <label id="intD">intentos disponibles</label>
+ </div>
+</div>
+  <label id="ingNum">Ingresa un numero ! </label><br>
+ <div id="contenedor-con-video">
+    <video id="video-fondo" autoplay loop muted>
+        <source src="../styles/videos/firespark2.mp4" type="video/mp4">
+    </video>
+        <input type="number" id="input" placeholder="Aqui"><br>
+  <button id="play" class="play" onclick="jugar()" ><span class="material-symbols-outlined">
+        stadia_controller</span></button>
+ <div class="mayorMenor"></div>
+  <button id="reset" class="reset"><span class="material-symbols-outlined">
+        autorenew</span></button>
+ </div>
+</fieldset>
+<canvas id="animacion"></canvas><!--PARA USAR EN FUTURA ANIMACION-->
+<div id="extremoFormulario"></div>
+<div id="formulario">
+<!--------------------PREGUNTAR NOMBRE------------------------------>
+    <div id="pregunta1" class="pregunta-container">
+        <p class="preguntas">Hola viajero, dime tu nombre..</p>
+        <input class="input" type="text" id="respuesta1" ><br>
+       <button class="enviarDatos" onclick="siguientePregunta(1, 'respuesta1')" onmouseup="validarNombre(this.value)">&#10144;</button>
+       </div>
+<!----------------PREGUNTAR CANTIDAD INTENTOS----------------------->
+       <div id="pregunta2" class="pregunta-container">
+       <p class="preguntas">¿cuantos intentos deseas tener?</p>
+       <input class="input" type="number" id="respuesta2" ><br>
+       <button class="enviarDatos" onclick="siguientePregunta(2, 'respuesta2')">&#10144;</button>
+       </div>
+<!----------------PREGUNTAR NUMERO MENOR----------------------------->
+       <div id="pregunta3" class="pregunta-container">
+       <p class="preguntas">dime desde que número deseas jugar</p>
+       <input class="input" type="number" id="respuesta3" ><br>
+       <button class="enviarDatos" onclick="siguientePregunta(3,'respuesta3')">&#10144;</button>
+       </div>
+<!---------------PREGUNTAR NUMERO MAYOR------------------------------>
+       <div id="pregunta4" class="pregunta-container">
+       <p class="preguntas">¿cual es el mayor numero con el que deseas jugar?</p>
+       <input class="input" type="number" id="respuesta4" ><br>
+       <button class="enviarDatos" onclick="siguientePregunta(4,'respuesta4')" onmouseup="validarMenoryMayor()" >&#10144;</button>
+       </div>
+<!----------------MENSAJE A JUGAR------------------------------------>
+       <div id="pregunta5" class="pregunta-container">
+        <p id="mensajeFinal" class="preguntas">A JUGAR !!!</p>
+        </div>
+</fieldset>
+<div id="area-texto">
+   <p>En este juego se emplearon recursos de...<br>
+        y se establecio para su confeccion los parametros basicos de :<br>
+        1-ingresar nombre jugador.<br>
+        2-ingresar parametro de numeros para jugar.<br>
+        22-mostrar una leyenda que indique el parametro de numeros a jugar.<br>
+        3-mostrar cantidad de intentos que desea.<br>
+        4-mostrar listado de numeros elegidos.<br>
+        5-mostrar cantidad de intentos realizados.<br>
+        6- mostrar cantidad de intentos restantes.<br>
+          -mostrar pistas si el numero es mayor o menor.<br>
+        7- mostrar alerta de victoria cuando acierte al numero.<br>
+        8- mostrar alerta en caso de que haya alcanzado el numero maximo de intentos.<br>
+        9- mostrar en pantalla cual era el numero a elegir.<br>
+   </p>
+</div>
+    <script src="C:\Users\Usuario\OneDrive\Escritorio\PROYECTOS\JUEGOS\ADIVINANZA\js\adivinanza.js"></script> 
+</body>
+</html>
